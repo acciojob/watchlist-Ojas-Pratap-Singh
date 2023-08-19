@@ -11,7 +11,7 @@ public class MovieRepository {
     HashMap<String,Movie> moviedb =new HashMap<>();
     HashMap<String,Director> directordb =new HashMap<>();
     //director vs its movies list hashmap
-    HashMap<String, ArrayList<String>> movieDirectordb =new HashMap<>();
+    HashMap<String, List<String>> movieDirectordb =new HashMap<>();
 
 
     public String addMovie(Movie movie) {
@@ -41,11 +41,11 @@ public class MovieRepository {
         return directordb.get(directorName);
     }
 
-    public ArrayList<String> getMoviesByDirectorName(String directorName) {
-        return (ArrayList<String>) movieDirectordb.get(directorName);
+    public List<String> getMoviesByDirectorName(String directorName) {
+        return  movieDirectordb.get(directorName);
     }
 
-    public ArrayList<String> findAllMovies() {
+    public List<String> findAllMovies() {
         return new ArrayList<>(moviedb.keySet());
     }
 
